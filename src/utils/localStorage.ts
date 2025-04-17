@@ -1,5 +1,9 @@
 
 import { Artisan, User, Booking, Category, Review } from '../types';
+import { mockCategories } from '../data/mockData';
+
+// Re-export mockCategories
+export { mockCategories };
 
 // Artisans
 export const getArtisans = (): Artisan[] => {

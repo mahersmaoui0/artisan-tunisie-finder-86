@@ -54,8 +54,8 @@ import {
   saveArtisan,
   getBookingsByArtisanId,
   saveBooking,
-  mockCategories,
 } from "@/utils/localStorage";
+import { mockCategories } from "@/data/mockData";
 import { Artisan, Booking, Category } from "@/types";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
