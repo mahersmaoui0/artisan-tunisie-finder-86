@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Tunisian inspired colors
+				tunisian: {
+					terracotta: '#C35831',
+					blue: '#1A5F7A',
+					sand: '#E6D1A2',
+					olive: '#5A7302',
+					yellow: '#FFC145'
 				}
 			},
 			borderRadius: {
