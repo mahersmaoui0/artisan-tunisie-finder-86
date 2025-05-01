@@ -8,6 +8,7 @@ import { mockCategories } from "@/data/mockData";
 import { Search } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { VirtualAssistant } from "@/components/VirtualAssistant";
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -224,6 +225,9 @@ const HomePage = () => {
       </main>
 
       <Footer />
+      
+      {/* Virtual Assistant */}
+      <VirtualAssistant />
     </div>
   );
 };

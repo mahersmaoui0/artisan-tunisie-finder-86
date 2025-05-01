@@ -13,6 +13,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
 import DashboardPage from "./pages/DashboardPage";
 import NotFound from "./pages/NotFound";
+import { VirtualAssistant } from "./components/VirtualAssistant";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,8 @@ const App = () => (
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          {/* L'assistant virtuel sera disponible sur toutes les pages */}
+          <VirtualAssistant />
         </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
