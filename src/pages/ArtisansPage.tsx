@@ -4,6 +4,9 @@ import { updateMockArtisansWithImages, mockCategories } from "@/data/mockData";
 import ArtisansList from "@/components/ArtisansList";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { MapPin } from "lucide-react";
 
 const ArtisansPage = () => {
   // Initialize mock data and update with images if needed
@@ -24,6 +27,14 @@ const ArtisansPage = () => {
             <p className="text-lg text-muted-foreground">
               Découvrez les meilleurs artisans pour tous vos projets
             </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" className="gap-2">
+                <Link to="/location">
+                  <MapPin className="h-4 w-4" />
+                  <span>Voir la carte des artisans</span>
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 

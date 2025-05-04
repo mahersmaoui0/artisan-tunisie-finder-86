@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
 import DashboardPage from "./pages/DashboardPage";
+import LocationPage from "./pages/LocationPage";
 import NotFound from "./pages/NotFound";
 import { VirtualAssistant } from "./components/VirtualAssistant";
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<HomePage />} />
             <Route path="/artisans" element={<ArtisansPage />} />
             <Route path="/artisans/:id" element={<ArtisanDetailPage />} />
+            <Route path="/location" element={<LocationPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/profile" element={<ProfilePage />} />
