@@ -4,12 +4,23 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Calendar, MapPin, Phone, Star } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface ArtisanCardProps {
   artisan: Artisan;
 }
 
 const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
+  // Extraire les initiales du nom pour le fallback de l'avatar
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(part => part[0])
+      .join('')
+      .toUpperCase()
+      .substring(0, 2);
+  };
+
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md">
       <CardHeader className="p-0">
@@ -34,10 +45,20 @@ const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
         </div>
       </CardHeader>
       <CardContent className="p-4">
-        <h3 className="mb-1 text-lg font-semibold">{artisan.name}</h3>
-        <p className="mb-2 text-sm capitalize text-muted-foreground">
-          {artisan.category}
-        </p>
+        <div className="mb-4 flex items-center gap-3">
+          <Avatar className="h-12 w-12 border-2 border-tunisian-terracotta/20">
+            <AvatarImage src={artisan.imageUrl} />
+            <AvatarFallback className="bg-tunisian-blue/10 text-tunisian-blue">
+              {getInitials(artisan.name)}
+            </AvatarFallback>
+          </Avatar>
+          <div>
+            <h3 className="text-lg font-semibold">{artisan.name}</h3>
+            <p className="text-sm capitalize text-muted-foreground">
+              {artisan.category}
+            </p>
+          </div>
+        </div>
         <div className="mb-2 flex items-center gap-1 text-xs text-muted-foreground">
           <MapPin className="h-3 w-3" />
           <span>{artisan.city}</span>

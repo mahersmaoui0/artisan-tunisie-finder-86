@@ -1,6 +1,6 @@
-
 import { Artisan, User, Booking, Category } from '../types';
 
+// Fonction pour générer les données initiales
 export const generateMockData = () => {
   // Check if mock data already exists in localStorage
   const existingArtisans = localStorage.getItem('artisans');
@@ -24,6 +24,35 @@ export const generateMockData = () => {
   if (!existingCategories) {
     localStorage.setItem('categories', JSON.stringify(mockCategories));
   }
+};
+
+// Fonction pour mettre à jour les images des artisans
+export const updateMockArtisansWithImages = () => {
+  const artisansFromStorage = localStorage.getItem('artisans');
+  let artisans = artisansFromStorage ? JSON.parse(artisansFromStorage) : [...mockArtisans];
+  
+  // Images pour les artisans
+  const artisanImages = {
+    '1': '/lovable-uploads/9039a4f1-c8c0-4603-89bb-d4886408e12e.png', // Image téléchargée
+    '2': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=300&h=300&crop=faces',
+    '3': 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80&w=300&h=300&crop=faces',
+    '4': 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=300&h=300&crop=faces',
+    '5': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300&h=300&crop=faces',
+    '6': 'https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&q=80&w=300&h=300&crop=faces',
+  };
+  
+  // Mettre à jour les images des artisans
+  const updatedArtisans = artisans.map(artisan => {
+    if (artisanImages[artisan.id]) {
+      return { ...artisan, imageUrl: artisanImages[artisan.id] };
+    }
+    return artisan;
+  });
+  
+  // Mettre à jour le localStorage
+  localStorage.setItem('artisans', JSON.stringify(updatedArtisans));
+  
+  return updatedArtisans;
 };
 
 export const mockCategories: {id: string, name: Category, icon: string}[] = [

@@ -1,14 +1,14 @@
 
 import { useEffect } from "react";
-import { generateMockData, mockCategories } from "@/data/mockData";
+import { updateMockArtisansWithImages, mockCategories } from "@/data/mockData";
 import ArtisansList from "@/components/ArtisansList";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const ArtisansPage = () => {
-  // Initialize mock data if needed
+  // Initialize mock data and update with images if needed
   useEffect(() => {
-    generateMockData();
+    updateMockArtisansWithImages();
   }, []);
 
   return (
