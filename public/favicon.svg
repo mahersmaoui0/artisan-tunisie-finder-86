@@ -1,0 +1,15 @@
+
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background square with rounded corners -->
+  <rect width="64" height="64" rx="12" fill="#EA384C" />
+  
+  <!-- Stylized traditional Tunisian door arch -->
+  <path d="M16 18H48V46C48 48.2091 46.2091 50 44 50H20C17.7909 50 16 48.2091 16 46V18Z" fill="white" />
+  
+  <!-- Arch detail -->
+  <path d="M32 18V34M24 26H40" stroke="#EA384C" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Decorative elements representing traditional Tunisian patterns -->
+  <circle cx="32" cy="40" r="4" fill="#EA384C" />
+  <path d="M24 40H28M36 40H40" stroke="#EA384C" stroke-width="2" stroke-linecap="round" />
+</svg>
