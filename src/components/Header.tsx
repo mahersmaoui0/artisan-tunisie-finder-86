@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu, LogIn, User, Home, Briefcase, LogOut } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,9 +26,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b bg-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-tunisian-terracotta">
-            Artisan<span className="text-tunisian-blue">Tunisie</span>
-          </span>
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
